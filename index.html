@@ -11,7 +11,7 @@
             padding: 0;
             font-family: Arial, sans-serif;
             height: 100%;
-            font-size: 18px;
+            font-size: 16px;
             background: linear-gradient(135deg, rgba(42, 28, 48, 0.6), rgba(30, 63, 85, 0.6)),
                         url('./imagens/pexels-shvetsa-3845653.jpg') no-repeat center center fixed;
             background-size: cover;
@@ -19,24 +19,26 @@
             box-sizing: border-box;
         }
         .header-container {
-            padding: 40px;
+            padding: 20px;
             display: flex;
             align-items: center;
-            justify-content: flex-start;
+            justify-content: center;
+            flex-direction: column;
         }
         .logo-container {
             display: flex;
             align-items: center;
+            flex-direction: column;
         }
         .logo {
-            width: 120px;
-            height: 120px;
+            width: 80px;
+            height: 80px;
             background-color: #000000;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
+            margin-bottom: 10px;
             overflow: hidden;
         }
         .logo img {
@@ -45,35 +47,47 @@
             object-fit: cover;
         }
         .clinic-name {
-            font-size: 2.5em;
+            font-size: 1.8em;
             font-weight: bold;
+            text-align: center;
         }
         .content-container {
-            padding: 40px;
+            padding: 20px;
             display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
             margin: 0 auto;
         }
         .welcome-section {
-            width: 60%;
-        }
-        h2 {
-            font-size: 2.5em;
-            margin: 0 0 20px 0;
-        }
-        p {
-            font-size: 1.2em;
+            width: 100%;
             margin-bottom: 30px;
         }
-        h3 {
-            font-size: 2em;
+        h2 {
+            font-size: 1.8em;
+            margin: 0 0 15px 0;
+            text-align: center;
+        }
+        p {
+            font-size: 1em;
             margin-bottom: 20px;
+            text-align: center;
+        }
+        h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         ul {
             list-style-type: none;
             padding: 0;
-            font-size: 1.2em;
+            font-size: 1em;
+            margin: 0 15px;
         }
         li {
             margin-bottom: 10px;
@@ -81,41 +95,73 @@
         li::before {
             content: "✓ ";
             color: #2ecc71;
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
         .contact-info {
             background-color: rgba(141, 141, 141, 0.4);
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
-            width: 35%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
         }
         .contact-info h3 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .contact-info p, .contact-info .social-icons {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            text-align: center;
         }
         .social-icons {
+            width: 100%;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
         .social-icons a {
             color: white;
             text-decoration: none;
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
-            font-size: 1.6em;
+            transition: color 0.3s;
         }
         .social-icons a i {
             margin-right: 10px;
         }
+        .whatsapp-link i {
+            color: #25D366;
+        }
+        .instagram-link i {
+            color: #E1306C;
+        }
+        .facebook-link i {
+            color: #1877F2;
+        }
+        .whatsapp-link:hover i, .whatsapp-link:hover {
+            color: #25D366;
+        }
+        .instagram-link:hover i, .instagram-link:hover {
+            color: #E1306C;
+        }
+        .facebook-link:hover i, .facebook-link:hover {
+            color: #1877F2;
+        }
         .address {
-            margin-top: 30px;
-            font-size: 1em;
+            margin-top: 20px;
+            font-size: 0.9em;
+            text-align: center;
         }
         .address a {
             color: white;
+            text-decoration: none;
+        }
+        .address a:hover {
             text-decoration: underline;
         }
         .icon {
@@ -123,16 +169,62 @@
             display: inline-block;
             text-align: center;
         }
-        .whatsapp-link {
-            color: white;
+        a:link, a:visited {
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            font-size: 1.6em;
+            color: white;
         }
-        .whatsapp-link .icon {
-            font-size: 1.6em;
-            margin-right: 10px; /* Adiciona espaço entre o ícone e o número */
+
+        @media (min-width: 768px) {
+            body, html {
+                font-size: 17px;
+            }
+            .header-container {
+                flex-direction: row;
+                justify-content: flex-start;
+            }
+            .logo-container {
+                flex-direction: row;
+            }
+            .logo {
+                width: 110px;
+                height: 110px;
+                margin-right: 15px;
+                margin-bottom: 0;
+            }
+            .clinic-name {
+                font-size: 2.2em;
+            }
+            .content-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                max-width: 1200px;
+            }
+            .welcome-section {
+                width: 60%;
+                margin-bottom: 0;
+            }
+            h2 {
+                font-size: 2.2em;
+                text-align: left;
+            }
+            p {
+                font-size: 1.1em;
+                text-align: left;
+            }
+            h3 {
+                font-size: 1.7em;
+                text-align: left;
+            }
+            .services-container {
+                justify-content: flex-start;
+            }
+            .contact-info {
+                width: 30%;
+            }
+            .address {
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -148,15 +240,21 @@
     <div class="content-container">
         <div class="welcome-section">
             <h2>Seja bem-vindo(a)!</h2>
-            <p>Cuide do seu sorriso com tratamentos de<br>alta qualidade e atenção personalizada.</p>
+            <p>Cuide do seu sorriso com tratamentos de alta qualidade e atenção personalizada.</p>
             <h3>Nossos Serviços:</h3>
-            <ul>
-                <li>Implante</li>
-                <li>Canal</li>
-                <li>Aparelho</li>
-                <li>Limpeza</li>
-                <li>Restauração</li>
-            </ul>
+            <div class="services-container">
+                <ul>
+                    <li>Implante</li>
+                    <li>Canal</li>
+                    <li>Aparelho</li>
+                    <li>Limpeza</li>
+                </ul>
+                <ul>
+                    <li>Restauração</li>
+                    <li>Prótese</li>
+                    <li>Ortodontia</li>
+                </ul>
+            </div>
             <div class="address">
                 <a href="https://www.google.com/maps/search/?api=1&query=R.+Itabuna,+15+-+Centro,+Osasco+-+SP,+07791-045" target="_blank">
                     Endereço: R. Itabuna, 15 - Centro, Osasco - SP, 07791-045
@@ -168,8 +266,8 @@
             <p><a class="whatsapp-link" href="https://wa.me/5511988172990" target="_blank"><i class="icon fab fa-whatsapp"></i> (11) 988172990</a></p>
             <p>Nos Siga nas Redes Sociais:</p>
             <div class="social-icons">
-                <a href="#" target="_blank"><i class="icon fab fa-instagram"></i> odon.toconfort</a>
-                <a href="#" target="_blank"><i class="icon fab fa-facebook"></i> Odonto Confort</a>
+                <a class="instagram-link" href="https://www.instagram.com/odon.toconfort/" target="_blank"><i class="icon fab fa-instagram"></i> odon.toconfort</a>
+                <a class="facebook-link" href="https://www.facebook.com/odontoconfortclinica/" target="_blank"><i class="icon fab fa-facebook"></i> Odonto Confort</a>
             </div>
         </div>
     </div>
