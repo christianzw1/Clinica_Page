@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odonto Confort</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+            font-size: 18px;
+            background: linear-gradient(135deg, rgba(42, 28, 48, 0.6), rgba(30, 63, 85, 0.6)),
+                        url('/imagens/pexels-shvetsa-3845653.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            box-sizing: border-box;
+        }
+        .header-container {
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            background-color: #000000;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            overflow: hidden;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .clinic-name {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .content-container {
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .welcome-section {
+            width: 60%;
+        }
+        h2 {
+            font-size: 2.5em;
+            margin: 0 0 20px 0;
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.2em;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li::before {
+            content: "✓ ";
+            color: #2ecc71;
+            font-size: 1.2em;
+        }
+        .contact-info {
+            background-color: rgba(141, 141, 141, 0.4);
+            padding: 30px;
+            border-radius: 15px;
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+        }
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.6em;
+        }
+        .social-icons a i {
+            margin-right: 10px;
+        }
+        .address {
+            margin-top: 30px;
+            font-size: 1em;
+        }
+        .address a {
+            color: white;
+            text-decoration: underline;
+        }
+        .icon {
+            width: 25px;
+            display: inline-block;
+            text-align: center;
+        }
+        .whatsapp-link {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-size: 1.6em;
+        }
+        .whatsapp-link .icon {
+            font-size: 1.6em;
+            margin-right: 10px; /* Adiciona espaço entre o ícone e o número */
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <div class="logo-container">
+            <div class="logo">
+                <img src="/imagens/Odonto C onfort_page-0001.jpg" alt="Odonto Confort Logo">
+            </div>
+            <div class="clinic-name">Odonto Confort</div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="welcome-section">
+            <h2>Seja bem-vindo(a)!</h2>
+            <p>Cuide do seu sorriso com tratamentos de<br>alta qualidade e atenção personalizada.</p>
+            <h3>Nossos Serviços:</h3>
+            <ul>
+                <li>Implante</li>
+                <li>Canal</li>
+                <li>Aparelho</li>
+                <li>Limpeza</li>
+                <li>Restauração</li>
+            </ul>
+            <div class="address">
+                <a href="https://www.google.com/maps/search/?api=1&query=R.+Itabuna,+15+-+Centro,+Osasco+-+SP,+07791-045" target="_blank">
+                    Endereço: R. Itabuna, 15 - Centro, Osasco - SP, 07791-045
+                </a>
+            </div>
+        </div>
+        <div class="contact-info">
+            <h3>Faça uma Consulta</h3>
+            <p><a class="whatsapp-link" href="https://wa.me/5511988172990" target="_blank"><i class="icon fab fa-whatsapp"></i> (11) 988172990</a></p>
+            <p>Nos Siga nas Redes Sociais:</p>
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="icon fab fa-instagram"></i> odon.toconfort</a>
+                <a href="#" target="_blank"><i class="icon fab fa-facebook"></i> Odonto Confort</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
