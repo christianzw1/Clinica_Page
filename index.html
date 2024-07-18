@@ -6,6 +6,8 @@
     <title>Odonto Confort</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="/imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
     <style>
         body, html {
             margin: 0;
@@ -72,7 +74,8 @@
         p {
             font-size: 1em;
             margin-bottom: 20px;
-            text-align: center;
+            text-align: justify;
+            text-indent: 10px;
         }
         h3 {
             font-size: 1.4em;
@@ -175,6 +178,48 @@
             color: white;
         }
 
+        /* Estilos para o carrossel */
+        .carousel-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+            padding-bottom: 40px;
+        }
+        .swiper {
+            width: 100%;
+        }
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: transparent; /* Fundo transparente */
+        }
+        .swiper-slide img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Remove espaço extra abaixo da imagem */
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            --swiper-navigation-size: 20px;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 20px;
+        }
+        .swiper-pagination-bullet {
+            background: #ffffff;
+            opacity: 0.5;
+        }
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
         @media (min-width: 768px) {
             body, html {
                 font-size: 17px;
@@ -226,6 +271,9 @@
             .address {
                 text-align: left;
             }
+            .swiper {
+                height: 500px; /* Aumenta a altura do carrossel em telas maiores */
+            }
         }
     </style>
 </head>
@@ -240,8 +288,9 @@
     </div>
     <div class="content-container">
         <div class="welcome-section">
-            <h2>Seja bem-vindo(a)!</h2>
-            <p>Cuide do seu sorriso com tratamentos de alta qualidade e atenção personalizada.</p>
+            <h2>🦷Seja bem-vindo(a)!🦷</h2>
+            <p>Cuide do seu sorriso com tratamentos de alta qualidade e atenção personalizada. Na Odonto Confort, acreditamos que um sorriso saudável é a chave para uma vida plena e confiante. Nossa clínica odontológica foi criada com um único objetivo: oferecer a você o máximo conforto e cuidado em cada consulta.</p>
+            <p>Está na hora de cuidar do seu sorriso com quem entende e se importa de verdade. Agende sua consulta na Odonto Confort e descubra uma nova razão para sorrir!</p>
             <h3>Nossos Serviços:</h3>
             <div class="services-container">
                 <ul>
@@ -272,5 +321,91 @@
             </div>
         </div>
     </div>
+
+    <!-- Novo carrossel adicionado aqui -->
+    <div class="carousel-container">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./imagens/roll4.jpeg" alt="Novos updates">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./imagens/roll3.jpg" alt="Avaliações de clientes">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./imagens/roll2.jpg" alt="Procedimentos">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./imagens/roll1.png" alt="Procedimentos">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./imagens/roll5.jpeg" alt="Procedimentos">
+                </div>
+                <!-- Adicione mais slides conforme necessário -->
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const swiper = new Swiper('.swiper', {
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 15000, // 10 segundos
+                    disableOnInteraction: false,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                on: {
+                    init: function () {
+                        this.autoplay.stop();
+                        this.updateSize(); // Atualiza o tamanho do Swiper
+                    },
+                    imagesReady: function () {
+                        this.autoplay.start();
+                        this.updateSize(); // Atualiza o tamanho do Swiper após as imagens carregarem
+                    },
+                    resize: function () {
+                        this.updateSize(); // Atualiza o tamanho do Swiper quando a janela é redimensionada
+                    }
+                }
+            });
+
+            // Função para atualizar o tamanho do Swiper baseado na imagem atual
+            function updateSwiperSize() {
+                const activeSlide = swiper.slides[swiper.activeIndex];
+                const img = activeSlide.querySelector('img');
+                if (img) {
+                    swiper.el.style.height = `${img.offsetHeight}px`;
+                }
+            }
+
+            // Atualiza o tamanho quando a imagem carrega
+            swiper.slides.forEach(slide => {
+                const img = slide.querySelector('img');
+                if (img) {
+                    img.onload = updateSwiperSize;
+                }
+            });
+
+            // Atualiza o tamanho quando muda de slide
+            swiper.on('slideChange', updateSwiperSize);
+        });
+
+        
+    </script>
 </body>
 </html>
